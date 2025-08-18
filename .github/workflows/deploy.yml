@@ -16,16 +16,13 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "20"   # upgrade from 16
+          node-version: "20"   # use Node 20 LTS
           cache: "pnpm"
-
-      - name: Enable corepack
-        run: corepack enable   # makes sure pnpm from package.json is respected
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v3
         with:
-          version: 9           # or the version your project expects
+          version: 9           # or whatever version your project needs
           run_install: false
 
       - name: Install deps
